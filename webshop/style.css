@@ -1,0 +1,26 @@
+#wrapper > * {
+  border: 1px solid #000;
+}
+#wrapper {
+  display: grid;
+}
+main {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+main h1 {
+  grid-column: 1/-1;
+}
+article {
+  background: hotpink;
+}
+@media screen and (min-width: 700px) {
+  #wrapper {
+    grid-template-columns: 2fr 200px;
+  }
+  header,
+  footer {
+    grid-column: 1/-1;
+  }
+}

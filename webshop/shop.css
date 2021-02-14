@@ -1,19 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Noto+Sans+JP:wght@100;400;700&display=swap");
 
+#back img {
+  height: 10px;
+  margin-top: 4vw;
+  margin-left: 5vw;
+}
+
+#back span {
+  font-size: 0.7rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1px;
+}
+
 #subcategories {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin-top: 1.4rem;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
 .subcat {
   display: flex;
   flex-direction: column;
-  border: 3px solid violet;
-  padding: 3rem;
-  margin: 1rem;
-  background-color: hotpink;
-  color: yellowgreen;
+  border: 3px solid black;
+  padding: 1vw;
+  margin: 1vw;
+  color: black;
   align-items: center;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.subcat h2 {
+  font-weight: 200;
 }
 
 main {
@@ -24,10 +45,10 @@ h1 {
   font-size: 1.3em;
   margin-top: 0;
   margin-left: 5vw;
-  font-weight: 600;
+  font-weight: 300;
   margin-bottom: 0;
   padding-top: 20px;
-  color: darkslateblue;
+  color: black;
 }
 #productlist {
   margin-left: 4vw;
@@ -44,13 +65,16 @@ article img {
 .product {
   margin: 2rem 0.2rem;
   color: black;
+  position: relative;
+  align-content: center;
 }
 
 article h2 {
   font-size: 0.8rem;
   font-weight: 200;
-  margin-bottom: 0;
+  margin-bottom: 3px;
   margin-top: 0;
+  line-height: 15px;
 }
 
 article .brandname {
@@ -66,7 +90,13 @@ article .brandname {
   margin-bottom: 0.1rem;
   font-weight: 200;
 }
+li a {
+  color: white;
+}
 
+li a:visited {
+  color: white;
+}
 a {
   text-decoration: none;
 }
@@ -78,9 +108,8 @@ a:visited {
 }
 
 header {
-  border: 2px solid hotpink;
   grid-area: header;
-  background-color: violet;
+  background-color: black;
   font-family: "Jaldi", sans-serif;
 }
 
@@ -109,7 +138,7 @@ nav li {
 #logo {
   grid-area: logo;
   font-size: 2rem;
-  color: chartreuse;
+  color: white;
   margin-left: 20px;
   font-family: "Jaldi", sans-serif;
   font-weight: 600;
@@ -141,7 +170,7 @@ nav li {
 }
 
 div .brandname {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0;
   font-weight: 100;
   margin-top: -3px;
@@ -211,38 +240,35 @@ p #shopall {
   margin-top: 3px;
 }
 
-.prevprice {
+.discounted .prevprice {
   text-decoration: line-through;
   float: right;
 }
 
-.onsale {
+article .discounted {
+  display: none;
+}
+article.onSale .discounted {
   display: flex;
 }
 
-.newprice {
+.discounted .newprice {
   margin-right: 0.5rem;
   font-size: 0.8rem;
   font-weight: 200;
   color: teal;
 }
-
-.faded {
-  opacity: 0.5;
-  /* filter: alpha(opacity=40); */
+.product.soldOut img {
+  opacity: 0.3;
   background-color: #000;
 }
 
-#container {
-  position: relative;
-  text-align: center;
-}
-
-#soldoutsign {
+.product.soldOut::before {
+  content: "Sold Out";
   font-size: 1.5rem;
   z-index: 99;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
