@@ -33,6 +33,11 @@
   text-align: center;
 }
 
+.subcatlink :hover {
+  background-color: black;
+  color: white;
+}
+
 .subcat h2 {
   font-weight: 200;
 }

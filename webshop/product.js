@@ -19,7 +19,7 @@ function showProduct(product) {
   document.querySelector(".productname1").textContent =
     product.productdisplayname;
   document.querySelector(".price").textContent = product.price;
-  document.querySelector("div #details").textContent = product.description;
+  document.querySelector("div #details").innerHTML = product.description;
   document.querySelector("div span").textContent = product.basecolour;
   document.querySelector(
     ".productimage"
